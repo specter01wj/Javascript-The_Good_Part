@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var add = function (a, b) {
+		    return a + b;
+		};
+
+		var myObject = {
+		    value: 3,
+		    increment: function (inc) {
+		        this.value += typeof inc === 'number' ? inc : 1;
+		    }
+		};
+
+		myObject.double = function (  ) {
+				var that = this;    // Workaround.
+
+				var helper = function (  ) {
+						that.value = add(that.value, that.value);
+				};
+
+				helper(  );    // Invoke helper as a function.
+		};
+
+		// Invoke double as a method.
+
+		myObject.double();
+		document.writeln(myObject.value);     // 6
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
