@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var Quo = function (string) {
+			this.status = string;
+		};
+
+		Quo.prototype.get_status = function ( ) {
+			return this.status;
+		};
+		// Make an instance of Quo.
+		var myQuo = new Quo("confused");
+		document.writeln(myQuo.get_status( )); // confused
+		// Invoke double as a method.
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

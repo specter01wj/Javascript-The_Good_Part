@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var add = function (a, b) {
+		    return a + b;
+		};
+
+		var array = [3, 4];
+		var sum = add.apply(null, array); // sum is 7
+		document.writeln(sum);
+
+		var Quo = function (string) {
+			this.status = string;
+		};
+
+		Quo.prototype.get_status = function ( ) {
+			return this.status;
+		};
+
+		// Make an object with a status member.
+		var statusObject = {
+			status: 'A-OK'
+		};
+
+		var status = Quo.prototype.get_status.apply(statusObject);
+
+		document.writeln(status);
+	// status is 'A-OK'
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
