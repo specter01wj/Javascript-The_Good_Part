@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var fade = function (node) {
+			var level = 1;
+			var step = function ( ) {
+				var hex = level.toString(16);
+				node.style.backgroundColor = '#FFFF' + hex + hex;
+				if (level < 15) {
+					level += 1;
+					setTimeout(step, 100);
+				}
+			};
+			setTimeout(step, 100);
+		};
+
+		fade(document.body);
+
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>

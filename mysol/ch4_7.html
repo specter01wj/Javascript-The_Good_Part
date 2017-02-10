@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var myObject = function() {
+			var value = 0;
+			return {
+				increment: function (inc) {
+					value += typeof inc === 'number' ? inc : 1;
+				},
+				getValue: function ( ) {
+					return value;
+				}
+			};
+		}();
+
+		myObject.increment(11);
+		myObject.increment(18);
+		document.writeln(myObject.getValue());
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

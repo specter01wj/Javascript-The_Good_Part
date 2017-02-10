@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var quo = function (status) {
+			return {
+				get_status: function ( ) {
+					return status;
+				}
+			};
+		};
+		// Make an instance of quo.
+		var myQuo = quo("amazed");
+		document.writeln(myQuo.get_status( ));
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
