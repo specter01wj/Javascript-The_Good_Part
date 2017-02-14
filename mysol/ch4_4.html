@@ -5,14 +5,14 @@
 		<title>Untitled Document</title>
 		<script type=text/javascript charset=utf-8>
 
-		Number.method('integer', function ( ) {
-			return Math[this < 0 ? 'ceiling' : 'floor'](this);
-		});
+		Number.prototype.integer = function ( ) {
+			return Math[this < 0 ? 'ceil' : 'floor'](this);
+		};
 		document.writeln((-10 / 3).integer( )); // -3
 
-		String.method('trim', function ( ) {
+		String.prototype.trim = function ( ) {
 			return this.replace(/^\s+|\s+$/g, '');
-		});
+		};
 		document.writeln('"' + " neat ".trim( ) + '"');
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var add = function (a, b) {
+		    return a + b;
+		};
+
+		Function.prototype.curry = function ( ) {
+			//var args = arguments, that = this;
+			var slice = Array.prototype.slice;
+			var args = slice.apply(arguments);
+			//var args = arguments.slice();
+			var that = this;
+			return function ( ) {
+				//return that.apply(null, args.concat(arguments));
+				return that.apply(null, args.concat(slice.apply(arguments)));
+				//return that.apply(null, args.concat(arguments.slice()));
+			};
+		};
+
+		var add1 = add.curry(1);
+		document.writeln(add1(6)); // 7
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>

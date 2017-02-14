@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		String.prototype.deentityify = function () {
+				// The entity table. It maps entity names to
+				// characters.
+				var entity = {
+					quot: '"',
+					lt: '<',
+					gt: '>'
+				};
+				// Return the deentityify method.
+				return function () {
+
+					return this.replace(/&([^&;]+);/g,
+						function (a, b) {
+							var r = entity[b];
+							return typeof r === 'string' ? r : a;
+						}
+					);
+
+				};
+			}();
+
+			document.writeln('&lt;&quot;&gt;'.deentityify( )); // <">
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>
