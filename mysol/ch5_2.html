@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+
+		var myMammal = {
+			name : 'Herb the Mammal',
+			get_name : function ( ) {
+				return this.name;
+			},
+			says : function ( ) {
+				return this.saying || '';
+			}
+		};
+
+		var myCat = Object.create(myMammal);
+		myCat.name = 'Henrietta';
+		myCat.saying = 'meow';
+
+		myCat.purr = function (n) {
+			var i, s = '';
+			for (i = 0; i < n; i += 1) {
+				if (s) {
+					s += '-';
+				}
+				s += 'r';
+			}
+			return s;
+		};
+
+		myCat.get_name = function ( ) {
+			return this.says( ) + ' ' + this.name + ' ' + this.says( );
+		};
+
+		var name = myCat.get_name();
+
+		document.writeln(name);
+
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>
