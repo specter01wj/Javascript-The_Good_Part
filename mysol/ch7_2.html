@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var parse_number = /^-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?$/i;
+
+		var testREG = function (num) {
+		    document.writeln(parse_number.test(num));
+		};
+
+		testREG('1');                // true
+		testREG('number');           // false
+		testREG('98.6');             // true
+		testREG('132.21.86.100');    // false
+		testREG('123.45E-67');       // true
+		testREG('123.45D-67');       // false
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>

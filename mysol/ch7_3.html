@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		function make_a_matcher(  ) {
+		    return /a/gi;
+		}
+
+		var x = make_a_matcher(  );
+		var y = make_a_matcher(  );
+
+		// Beware: x and y are the same object!
+
+		x.lastIndex = 10;
+
+		document.writeln(y.lastIndex);    // 10
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>
