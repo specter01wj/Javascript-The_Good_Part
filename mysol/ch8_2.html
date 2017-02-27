@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		Function.prototype.bind = function (that) {
+
+		// Return a function that will call this function as
+		// though it is a method of that object.
+
+		    var method = this,
+		        slice = Array.prototype.slice,
+		        args = slice.apply(arguments, [1]);
+		    return function (  ) {
+		        return method.apply(that,
+		            args.concat(slice.apply(arguments, [0])));
+		    };
+		};
+
+		var x = function (  ) {
+		    return this.value;
+		}.bind({value: 666});
+		console.log(x()); // 666
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>

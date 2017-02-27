@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		var a = {member: true};
+		var b = Object.create(a);              // from Chapter 3
+		var t = a.hasOwnProperty('member');   // t is true
+		var u = b.hasOwnProperty('member');   // u is false
+		var v = b.member;                     // v is true
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>

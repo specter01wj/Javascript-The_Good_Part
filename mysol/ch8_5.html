@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+
+		String.prototype.entityify = function () {
+
+		    var character = {
+		        '<' : '&lt;',
+		        '>' : '&gt;',
+		        '&' : '&amp;',
+		        '"' : '&quot;'
+		    };
+
+		    return function (  ) {
+		        return this.replace(/[<>&"]/g, function (c) {
+		            return character[c];
+		        });
+		    };
+		}();
+
+		var text = '<html><body bgcolor=linen><p>' +
+		        'This is <b>bold<\/b>!<\/p><\/body><\/html>';
+		var tags = /[^<>]+|<(\/?)([A-Za-z]+)([^<>]*)>/g;
+		var a, i;
+
+		while ((a = tags.exec(text))) {
+		    for (i = 0; i < a.length; i += 1) {
+		        document.writeln(('// [' + i + '] ' + a[i]).entityify());
+		    }
+		    document.writeln(  );
+		}
+
+		var b = /&.+;/.test('frank &amp; beans');
+		// b is true
+
+		</script>
+	</head>
+	<body>
+		<div>Div here!</div>
+	</body>
+</html>
